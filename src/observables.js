@@ -12,4 +12,8 @@ const observable$ = new Observable(subscriber => {
     subscriber.complete()
 })
 
-observable$.subscribe(observer)
+observable$.subscribe(
+    value => console.log('next', value),
+    error => console.log('error', error),
+    () => console.log("complete!")
+)
