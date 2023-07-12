@@ -7,13 +7,23 @@ const observer = {
 }
 
 const observable$ = new Observable(subscriber => {
-    subscriber.next("Hello");
-    subscriber.next("World")
-    subscriber.complete()
+    let count = 1
+    const interval = setInterval(() => {
+        subscriber.next(count)
+        count++;
+    }, 1000)
+    return () => {
+        console.log(`clearing the interval!`)
+        clearInterval(interval)
+    }
 })
 
-observable$.subscribe(
-    value => console.log('next', value),
-    error => console.log('error', error),
-    () => console.log("complete!")
-)
+const subscription = observable$.subscribe(observer)
+
+const subscription2 = observable$.subscribe(observer)
+
+subscription.add(subscription2)
+
+setTimeout(() => {
+    subscription.unsubscribe()
+}, 3500)
