@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "parcel src/index.html",
-    "scrollbar": "parcel src/labs/scrollbar/index.html"
+    "scrollbar": "parcel src/labs/scrollbar/index.html",
+    "countdown": "parcel src/labs/countdown/index.html"
   },
   "keywords": [],
   "author": "",
