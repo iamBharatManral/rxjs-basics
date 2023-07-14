@@ -5,6 +5,11 @@
     <script src="./countdown.js" defer></script>
     <title>Countdown Timer</title>
     <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
         h1, div {
             text-align: center;
             color: #d31c7d;
@@ -15,10 +20,20 @@
         }
         .countdown{
             font-size: 4rem;
+            height: 70px;
         }
         .message{
             font-size: 3rem;
             color: green;
+        }
+        button{
+            padding: 0.5rem 1rem;
+            background: #0a4b35;
+            color: wheat;
+            cursor: pointer;
+            border: none;
+            margin: 0 auto;
+            font-size: 1.2rem;
         }
     </style>
 </head>
@@ -26,5 +41,6 @@
     <h1>Countdown</h1>
     <div class="countdown"></div>
     <div class="message"></div>
+    <button type="button">Abort</button>
 </body>
 </html>
